@@ -1,0 +1,95 @@
+.equation-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.equation-line {
+  font-size: 1.5rem;
+  line-height: 2.4;
+  text-align: center;
+  word-break: break-word;
+}
+
+.term-wrapper {
+  display: inline;
+  white-space: nowrap;
+}
+
+.plus {
+  margin: 0 0.25rem;
+}
+
+.arrow {
+  margin: 0 0.5rem;
+  font-weight: bold;
+}
+
+.term {
+  display: inline;
+}
+
+.coefficient {
+  margin-right: 0.1rem;
+}
+
+.formula-text {
+  display: inline;
+}
+
+.formula-sub {
+  font-size: 0.7em;
+  vertical-align: -0.35em;
+}
+
+.formula-sup {
+  font-size: 0.7em;
+  vertical-align: 0.5em;
+}
+
+.blank-input {
+  width: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  font-family: inherit;
+  border: none;
+  border-bottom: 2px solid #1a73e8;
+  background: transparent;
+  margin: 0 0.1rem;
+  padding: 0 0.1rem;
+  vertical-align: baseline;
+}
+
+.blank-input:focus {
+  outline: none;
+  border-bottom-color: #0d47a1;
+}
+
+.blank-input.blank-sub,
+.blank-input.blank-sup {
+  width: 1.5rem;
+  font-size: 0.7em;
+}
+
+.blank-input.blank-sub {
+  vertical-align: -0.35em;
+}
+
+.blank-input.blank-sup {
+  vertical-align: 0.5em;
+}
+
+.blank-wrong {
+  border-bottom-color: #d93025;
+  color: #d93025;
+}
+
+.feedback {
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.feedback-error {
+  color: #d93025;
+}
