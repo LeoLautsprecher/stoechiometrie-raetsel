@@ -33,10 +33,11 @@ function normalize(value: string): string {
 
 interface EquationViewProps {
   equation: StoichiometricEquation
+  solved?: boolean
   onSolved: () => void
 }
 
-export function EquationView({ equation, onSolved }: EquationViewProps) {
+export function EquationView({ equation, solved = false, onSolved }: EquationViewProps) {
   const blanks = useMemo(() => collectBlanks(equation), [equation])
   const [values, setValues] = useState<Record<string, string>>({})
   const [wrongIds, setWrongIds] = useState<Set<string> | null>(null)
@@ -83,6 +84,13 @@ export function EquationView({ equation, onSolved }: EquationViewProps) {
     key: string,
     format: 'normal' | 'sub' | 'sup',
   ) {
+    if (solved) {
+      return (
+        <span key={key} className={`solved-blank solved-${format}`}>
+          {blank.answer}
+        </span>
+      )
+    }
     const isWrong = wrongIds?.has(blank.id) ?? false
     return (
       <input
@@ -123,7 +131,7 @@ export function EquationView({ equation, onSolved }: EquationViewProps) {
 
   return (
     <div className="equation-view">
-      <div className="equation-line">
+      <div className={`equation-line${solved ? ' equation-solved' : ''}`}>
         {equation.reactants.map((term, i) => (
           <span key={`r-${i}`} className="term-wrapper">
             {i > 0 && <span className="plus"> + </span>}
@@ -139,9 +147,11 @@ export function EquationView({ equation, onSolved }: EquationViewProps) {
         ))}
       </div>
 
-      <button className="btn btn-primary" onClick={handleCheck}>
-        Prüfen
-      </button>
+      {!solved && (
+        <button className="btn btn-primary" onClick={handleCheck}>
+          Prüfen
+        </button>
+      )}
 
       {checked && wrongIds && wrongIds.size > 0 && (
         <p className="feedback feedback-error">

@@ -9,7 +9,7 @@ import type { StoichiometricEquation } from '../types'
 // (Vergleich erfolgt ohne Berücksichtigung von Groß-/Kleinschreibung und Leerzeichen.)
 // ============================================================
 export const ACCESS_CODE = 'HELIOX-ADVANCED' // TODO: eigenen Zugangscode eintragen
-export const FINAL_CODE = '1867' // TODO: eigenen Lösungscode eintragen
+export const FINAL_CODE = '8367' // TODO: eigenen Lösungscode eintragen
 
 // ============================================================
 // FORMAT-ANLEITUNG FÜR STÖCHIOMETRISCHE GLEICHUNGEN

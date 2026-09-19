@@ -49,6 +49,29 @@ body {
   color: #444;
 }
 
+.brand-block,
+.brand-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brand-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.brand-tagline {
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+}
+
+.brand-heading {
+  margin-bottom: 0.5rem;
+}
+
 .card {
   width: 100%;
   max-width: 26rem;
@@ -146,6 +169,34 @@ body {
 .bonus-list-item a.solved {
   border-color: var(--color-success);
   color: var(--color-success);
+}
+
+.guide-screen {
+  gap: 1.25rem;
+}
+
+.guide-list {
+  width: 100%;
+  max-width: 26rem;
+  margin: 0;
+  padding-left: 1.25rem;
+  text-align: left;
+}
+
+.guide-list li {
+  margin-bottom: 0.7rem;
+}
+
+.guide-example {
+  width: 100%;
+  max-width: 26rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: 0.4rem;
+  text-align: left;
 }
 
 .nav-row {

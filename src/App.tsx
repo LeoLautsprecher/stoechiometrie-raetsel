@@ -1,5 +1,6 @@
 import { HashRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { AccessCodeScreen } from './screens/AccessCodeScreen'
+import { GuideScreen } from './screens/GuideScreen'
 import { OverviewScreen } from './screens/OverviewScreen'
 import { EquationScreen } from './screens/EquationScreen'
 import { CodeRevealScreen } from './screens/CodeRevealScreen'
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<AccessCodeScreen />} />
         <Route path="/uebersicht" element={<OverviewScreen />} />
+        <Route path="/anleitung" element={<GuideScreen />} />
         <Route path="/gleichung/:index" element={<EquationScreen />} />
         <Route path="/code" element={<CodeRevealScreen />} />
         <Route path="/bonus" element={<BonusListScreen />} />

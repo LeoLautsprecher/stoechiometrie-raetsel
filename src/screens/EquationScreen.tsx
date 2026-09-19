@@ -17,8 +17,6 @@ export function EquationScreen() {
 
   const equation = mainEquations[position - 1]
   const solved = isMainSolved(equation.id)
-  const prevPosition = position > 1 ? position - 1 : null
-  const nextPosition = position < mainEquations.length ? position + 1 : null
 
   return (
     <div className="screen">
@@ -26,39 +24,22 @@ export function EquationScreen() {
         Gleichung {position} von {mainEquations.length}
       </h1>
 
-      {solved ? (
-        <p className="feedback" style={{ color: 'var(--color-success)' }}>
-          Richtig gelöst!
-        </p>
-      ) : (
-        <>
-          <p>Ergänze die fehlenden Zahlen, sodass die Gleichung ausgeglichen ist.</p>
-          <EquationView
-            key={equation.id}
-            equation={equation}
-            onSolved={() => {
-              markMainSolved(equation.id)
-              forceRender((n) => n + 1)
-            }}
-          />
-        </>
-      )}
+      {!solved && <p>Ergänze die fehlenden Zahlen, sodass die Gleichung ausgeglichen ist.</p>}
+      <EquationView
+        key={equation.id}
+        equation={equation}
+        solved={solved}
+        onSolved={() => {
+          markMainSolved(equation.id)
+          forceRender((n) => n + 1)
+        }}
+      />
 
 
       <div className="nav-row">
-        {prevPosition && (
-          <Link className="btn btn-secondary" to={`/gleichung/${prevPosition}`}>
-            ← Vorherige
-          </Link>
-        )}
         <Link className="btn btn-secondary" to="/uebersicht">
           Übersicht
         </Link>
-        {nextPosition && (
-          <Link className="btn btn-secondary" to={`/gleichung/${nextPosition}`}>
-            Nächste →
-          </Link>
-        )}
       </div>
     </div>
   )

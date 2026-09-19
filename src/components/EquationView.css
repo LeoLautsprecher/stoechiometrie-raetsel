@@ -12,6 +12,10 @@
   word-break: break-word;
 }
 
+.equation-solved {
+  color: var(--color-success);
+}
+
 .term-wrapper {
   display: inline;
   white-space: nowrap;
@@ -83,6 +87,21 @@
 .blank-wrong {
   border-bottom-color: #d93025;
   color: #d93025;
+}
+
+.solved-blank {
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.solved-sub {
+  font-size: 0.7em;
+  vertical-align: -0.35em;
+}
+
+.solved-sup {
+  font-size: 0.7em;
+  vertical-align: 0.5em;
 }
 
 .feedback {

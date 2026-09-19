@@ -26,9 +26,14 @@ export function BonusEquationScreen() {
           <p className="feedback" style={{ color: 'var(--color-success)' }}>
             Richtig gelöst!
           </p>
-          <Link className="btn btn-secondary" to="/bonus">
-            Zurück zur Übersicht
-          </Link>
+          <div className="nav-row">
+            <Link className="btn btn-secondary" to="/bonus">
+              Bonusübersicht
+            </Link>
+            <Link className="btn btn-secondary" to="/uebersicht">
+              Übersicht
+            </Link>
+          </div>
         </>
       ) : (
         <>

@@ -48,3 +48,8 @@ export function resetProgress(): void {
   localStorage.removeItem(MAIN_SOLVED_KEY)
   localStorage.removeItem(BONUS_SOLVED_KEY)
 }
+
+export function resetSolvedProgress(): void {
+  localStorage.removeItem(MAIN_SOLVED_KEY)
+  localStorage.removeItem(BONUS_SOLVED_KEY)
+}

@@ -5,12 +5,15 @@ import { isMainSolved, isUnlocked } from '../state/progress'
 export function OverviewScreen() {
   if (!isUnlocked()) return <Navigate to="/" replace />
 
-  const allSolved = mainEquations.every((eq) => isMainSolved(eq.id))
-
   return (
     <div className="screen">
-      <h1>Übersicht</h1>
-      <p>Wähle eine Gleichung. Du kannst jederzeit zwischen ihnen wechseln.</p>
+      <div className="brand-heading">
+        <div className="brand-name">Heliox Advanced Materials</div>
+        <div className="brand-tagline">ENGINEERING MATTER</div>
+      </div>
+      <Link className="btn btn-secondary" to="/anleitung">
+        Anleitung
+      </Link>
       <ul className="bonus-list">
         {mainEquations.map((eq, i) => {
           const solved = isMainSolved(eq.id)
@@ -25,21 +28,15 @@ export function OverviewScreen() {
         })}
       </ul>
 
-      {allSolved ? (
-        <>
-          <p>Alle Gleichungen gelöst! Hier ist dein Code:</p>
-          <div className="code-display">{FINAL_CODE}</div>
-        </>
+      {mainEquations.every((eq) => isMainSolved(eq.id)) ? (
+        <div className="code-display">{FINAL_CODE}</div>
       ) : (
-        <>
-          <p>Löse alle Gleichungen, um den Code freizuschalten:</p>
-          <div className="code-display code-display-locked">
-            {'X'.repeat(FINAL_CODE.length)}
-          </div>
-        </>
+        <div className="code-display code-display-locked">
+          {'X'.repeat(FINAL_CODE.length)}
+        </div>
       )}
 
-      {allSolved ? (
+      {mainEquations.every((eq) => isMainSolved(eq.id)) ? (
         <Link className="btn btn-secondary" to="/bonus">
           Zu den Bonusgleichungen
         </Link>

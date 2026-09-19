@@ -21,8 +21,11 @@ export function AccessCodeScreen() {
 
   return (
     <div className="screen">
-      <h1>Stöchiometrie-Rätsel</h1>
-      <p>Bitte gib den Zugangscode ein.</p>
+      <div className="brand-block">
+        <div className="brand-name">Heliox Advanced Materials</div>
+        <div className="brand-tagline">ENGINEERING MATTER</div>
+      </div>
+      <p>Bitte gib den Zugangscode ein</p>
       <form className="card" onSubmit={handleSubmit}>
         <input
           className="text-input"
